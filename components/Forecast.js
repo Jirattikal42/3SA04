@@ -8,7 +8,10 @@ export default function Forecast(props) {
                 <Image source={require('../location.png')} style={{ width: 30, height: 30}} /> 
                 <Text style={textStyle.fotecastTextMedium}> {props.name}, {props.country}</Text>   
             </View>
-            <Text style={textStyle.fotecastTextLarge}>{props.main}</Text>
+            <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <Image source={{uri: props.icon }} style={{ width: 50, height: 50}} />
+                <Text style={textStyle.fotecastTextLarge}>{props.main}</Text>
+            </View>
             <Text style={textStyle.fotecastText}>{props.description}</Text>
                 <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                     <Text style={textStyle.fotecastTextLarge}>{props.temp}</Text>

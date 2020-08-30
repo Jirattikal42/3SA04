@@ -28,7 +28,7 @@ export default function Weather(props) {
                         temp: (json.main.temp),
                         name: json.name,
                         country: json.sys.country,
-                        iconId: json.weather.id
+                        icon: 'http://openweathermap.org/img/wn/'+json.weather[0].icon+'@2x.png' 
                     });
                 })
                 .catch((error) => {
