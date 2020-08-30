@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Text, ImageBackground, StyleSheet, View } from 'react-native';
 import Forecast from './Forecast';
 
+
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: 'main',
         description: 'description',
-        temp: 0
+        temp: 0,
+        name: 'city',
+        country: 'country'
+        
     }) 
+
+    
 
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
@@ -18,7 +24,9 @@ export default function Weather(props) {
                     setForecastInfo({
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: (json.main.temp),
+                        name: json.name,
+                        country: json.sys.country
                     });
                 })
                 .catch((error) => {
@@ -43,7 +51,7 @@ export default function Weather(props) {
 const styles = StyleSheet.create({
     backdrop: {
         flexDirection:'column',
-        justifyContent:'flex-start',
+        justifyContent:'center',
         alignItems:'center',
         width: '100%',
         height: '100%'
