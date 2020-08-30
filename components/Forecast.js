@@ -1,10 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 export default function Forecast(props) {
     return (
         <View>
-            <Text style={textStyle.fotecastTextMedium}>{props.name}, {props.country}</Text>
+            <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <Image source={require('../location.png')} style={{ width: 30, height: 30}} /> 
+                <Text style={textStyle.fotecastTextMedium}> {props.name}, {props.country}</Text>   
+            </View>
             <Text style={textStyle.fotecastTextLarge}>{props.main}</Text>
             <Text style={textStyle.fotecastText}>{props.description}</Text>
                 <View style={{flexDirection: 'row', justifyContent: 'center'}}>
