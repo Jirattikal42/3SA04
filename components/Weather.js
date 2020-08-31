@@ -68,5 +68,6 @@ const styles = StyleSheet.create({
         height: '40%',
         backgroundColor: 'rgba(0,0,0,0.6)'
     }
+          
 });
    
